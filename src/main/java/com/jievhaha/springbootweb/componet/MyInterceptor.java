@@ -12,7 +12,7 @@ public class MyInterceptor implements HandlerInterceptor {
         Object user = request.getSession().getAttribute("loginUser");
         if(user == null){
             request.setAttribute("msg","您没有权限请重新登录。");
-            request.getRequestDispatcher("/index.html").forward(request,response);
+            request.getRequestDispatcher("/").forward(request,response);
             return false;
         }
         return true;
